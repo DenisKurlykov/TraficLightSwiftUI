@@ -16,18 +16,18 @@ struct ContentView: View {
         ZStack {
             Color.black.ignoresSafeArea()
             VStack {
-                CircleRGBView().yellowLigt.foregroundColor(Color(red: 255, green: 0, blue: 0, opacity: opacityRed))
-                CircleRGBView().yellowLigt.foregroundColor(Color(red: 255, green: 255, blue: 0, opacity: opacityYellow))
-                CircleRGBView().greenLight.foregroundColor(Color(red: 0, green: 255, blue: 0, opacity: opacityGreen))
+                CircleRYGView().yellowLigt.foregroundColor(Color(red: 255, green: 0, blue: 0, opacity: opacityRed))
+                CircleRYGView().yellowLigt.foregroundColor(Color(red: 255, green: 255, blue: 0, opacity: opacityYellow))
+                CircleRYGView().greenLight.foregroundColor(Color(red: 0, green: 255, blue: 0, opacity: opacityGreen))
                 Spacer()
                 Button(action: { opacityChange() }, label: {
                     if opacityRed == 1.0 || opacityGreen == 1.0 || opacityYellow == 1.0 {
                         Text("Next")
                     } else {
-                        Text("Run")
+                        Text("Run".uppercased())
                     }
                 })
-                .frame(width: 140, height: 50)
+                .frame(width: 150, height: 50)
                 .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 4))
                 .shadow(radius: 4)
                 .background(Color.blue)

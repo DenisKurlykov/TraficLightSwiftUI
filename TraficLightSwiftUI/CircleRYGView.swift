@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CircleRGBView: View {
+struct CircleRYGView: View {
     var redLight: some View {
         setCircle()
     }
@@ -37,6 +37,6 @@ struct CircleRGBView: View {
 
 struct CircleRedView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleRGBView()
+        CircleRYGView()
     }
 }

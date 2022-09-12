@@ -7,50 +7,68 @@
 
 import SwiftUI
 
+enum CurentLight {
+    case red, yellow, green
+}
+
 struct ContentView: View {
-    @State private var opacityRed = 0.001
-    @State private var opacityYellow = 0.001
-    @State private var opacityGreen = 0.001
+    @State private var buttonTitle = "START"
     
+    @State private var curentLight = CurentLight.red
+    
+    @State private var redLightState = 0.3
+    @State private var yellowLightState = 0.3
+    @State private var greenLightState = 0.3
+    
+    private func nextColor() {
+        let lightIsOn = 1.0
+        let lightIsOff = 0.3
+        
+        switch curentLight {
+        case .red:
+            redLightState = lightIsOn
+            greenLightState = lightIsOff
+            curentLight = .yellow
+        case .yellow:
+            redLightState = lightIsOff
+            yellowLightState = lightIsOn
+            curentLight = .green
+        case .green:
+            yellowLightState = lightIsOff
+            greenLightState = lightIsOn
+            curentLight = .red
+        }
+    }
+}
+  
+extension ContentView {
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
-            VStack {
-                CircleRYGView().yellowLigt.foregroundColor(Color(red: 255, green: 0, blue: 0, opacity: opacityRed))
-                CircleRYGView().yellowLigt.foregroundColor(Color(red: 255, green: 255, blue: 0, opacity: opacityYellow))
-                CircleRYGView().greenLight.foregroundColor(Color(red: 0, green: 255, blue: 0, opacity: opacityGreen))
+            VStack(spacing: 20) {
+                ColorCircleView(
+                    color: .red,
+                    opacity: redLightState
+                )
+                ColorCircleView(
+                    color: .yellow,
+                    opacity: yellowLightState
+                )
+                ColorCircleView(
+                    color: .green,
+                    opacity: greenLightState
+                )
+                
                 Spacer()
-                Button(action: { opacityChange() }, label: {
-                    if opacityRed == 1.0 || opacityGreen == 1.0 || opacityYellow == 1.0 {
-                        Text("Next")
-                    } else {
-                        Text("Run".uppercased())
+                
+                StartButtonView(title: buttonTitle) {
+                    if buttonTitle == "START" {
+                        buttonTitle = "NEXT"
                     }
-                })
-                .frame(width: 150, height: 50)
-                .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 4))
-                .shadow(radius: 4)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .font(.system(size: 30, weight: .bold, design: .default))
+                        nextColor()
+                }
             }
-            .padding(.top, 20)
-            .padding(.bottom, 40)
-        }
-
-    }
-    private func opacityChange() {
-        if opacityRed < 1 && opacityYellow < 1 && opacityGreen < 1 {
-            opacityRed = 1
-        } else if opacityRed == 1 {
-            opacityRed = 0.001
-            opacityYellow = 1
-        } else if opacityYellow == 1 {
-            opacityYellow = 0.001
-            opacityGreen = 1
-        } else if opacityGreen == 1 {
-            opacityGreen = 0.001
-            opacityRed = 1
+            .padding()
         }
     }
 }

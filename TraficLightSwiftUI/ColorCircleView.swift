@@ -12,6 +12,7 @@ struct ColorCircleView: View {
     let opacity: Double
     
     var body: some View {
+        background(.black)
         Circle()
             .frame(width: 100, height: 100)
             .foregroundColor(color)

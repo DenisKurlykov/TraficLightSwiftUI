@@ -11,7 +11,7 @@
 		7D14FD0728CA774B004F3AD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D14FD0628CA774B004F3AD8 /* ContentView.swift */; };
 		7D14FD0928CA774B004F3AD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D14FD0828CA774B004F3AD8 /* Assets.xcassets */; };
 		7D14FD0C28CA774B004F3AD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D14FD0B28CA774B004F3AD8 /* Preview Assets.xcassets */; };
-		7D14FD1328CA7798004F3AD8 /* CircleRYGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D14FD1228CA7798004F3AD8 /* CircleRYGView.swift */; };
+		7D5FB54A28CF988C0042D4BF /* ColorCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FB54928CF988C0042D4BF /* ColorCircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,7 @@
 		7D14FD0628CA774B004F3AD8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7D14FD0828CA774B004F3AD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D14FD0B28CA774B004F3AD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7D14FD1228CA7798004F3AD8 /* CircleRYGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleRYGView.swift; sourceTree = "<group>"; };
+		7D5FB54928CF988C0042D4BF /* ColorCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			children = (
 				7D14FD0428CA774B004F3AD8 /* TraficLightSwiftUIApp.swift */,
 				7D14FD0628CA774B004F3AD8 /* ContentView.swift */,
-				7D14FD1228CA7798004F3AD8 /* CircleRYGView.swift */,
+				7D5FB54928CF988C0042D4BF /* ColorCircleView.swift */,
 				7D14FD0828CA774B004F3AD8 /* Assets.xcassets */,
 				7D14FD0A28CA774B004F3AD8 /* Preview Content */,
 			);
@@ -140,9 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D5FB54A28CF988C0042D4BF /* ColorCircleView.swift in Sources */,
 				7D14FD0728CA774B004F3AD8 /* ContentView.swift in Sources */,
 				7D14FD0528CA774B004F3AD8 /* TraficLightSwiftUIApp.swift in Sources */,
-				7D14FD1328CA7798004F3AD8 /* CircleRYGView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

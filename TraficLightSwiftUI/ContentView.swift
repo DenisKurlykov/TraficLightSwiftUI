@@ -12,12 +12,13 @@ enum CurentColor {
 }
 
 struct ContentView: View {
+    @State private var buttonTitle = "START"
     @State private var curentColor: CurentColor = .off
     var body: some View {
         ZStack {
             Color(.black)
                 .ignoresSafeArea()
-            VStack {
+            VStack(spacing: 30) {
                 ColorCircleView(
                     color: .red,
                     opacity: curentColor == .red ? 1 : 0.3
@@ -30,7 +31,29 @@ struct ContentView: View {
                     color: .green,
                     opacity: curentColor == .green ? 1 : 0.3
                 )
+                
+                Spacer()
+                
+                StartButtonView(title: buttonTitle) {
+                    if buttonTitle == "START" {
+                        buttonTitle = "NEXT"
+                    }
+                    nextColor()
+                }
             }
+            .padding()
+        }
+    }
+    private func nextColor() {
+        switch curentColor {
+        case .off:
+            curentColor = .red
+        case .red:
+            curentColor = .yellow
+        case .yellow:
+            curentColor = .green
+        case .green:
+            curentColor = .red
         }
     }
 }
